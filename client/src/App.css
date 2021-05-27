@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   margin: 30px;
- height: 100%;
+
 
 }
 
@@ -40,6 +40,22 @@ vertical-align: middle;
   white-space: pre-line;
 }   
 
+.price {
+  text-align:left;
+  clear: both;
+  /*padding-left: 75px;*/
+  white-space: pre-line;
+}   
+
+.price_change {
+  text-align:left;
+  clear: both;
+  /*padding-left: 75px;*/
+  white-space: pre-line;
+  color:rgb(19, 214, 19);
+  /*font-weight: bold;*/
+}   
+
 
 body{
   background-color: #222336;
@@ -54,7 +70,7 @@ body{
   text-align: left;
   float: left;
   margin-left: 5px;
-  margin-top: 200px;
+  margin-top: 140px;
  
   
 }
