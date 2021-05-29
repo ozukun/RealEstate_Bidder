@@ -43,10 +43,11 @@ contract SimpleStorage  {
   
   }*/
 
-    function completeAuction(address payable seller) public  payable
+    function completeAuction(address payable rcv) public  payable
   {
-      seller.transfer(bid_Transaction[seller]);
-      contract_amount=contract_amount-bid_Transaction[seller];
+      uint256 xs=msg.value;
+      rcv.transfer(xs);
+      /*contract_amount=contract_amount-bid_Transaction[seller];*/
   }
 
 

@@ -62,6 +62,28 @@ class App extends Component {
     }
   };
 
+  runComplete = async () => {
+    const { accounts,contract } = this.state;
+    let rcv_address=document.getElementById("input_rcv").value;
+    console.log(rcv_address);
+    console.log(accounts[0]);
+    //let seller= this.state.accounts[0];
+    let eth_amount=document.getElementById("input_eth").value*10**18;
+    console.log(eth_amount);
+    const load_up=
+    {  
+      //to: '0x9A00348361887FF759c277451150fCc02737A671',
+      from: accounts[0],
+      //gas: 50000, gasPrice: 1e6 ,
+      value : eth_amount   
+    };
+
+    await contract.methods.completeAuction(rcv_address).send(load_up);
+    console.log("Auction Completed !!")
+
+   
+  }
+
   runExample = async () => {
     const { accounts, contract } = this.state;
 
@@ -184,7 +206,11 @@ class App extends Component {
           <div className="App-msg">Sender account address and ETH amount :</div>
           <input type="text" id="input" value={this.state.accounts[0]} ></input>
           <input type="text" id="input_eth" value={this.state.storageValue} onChange={this.handleChange} className="App-input-eth"  ></input>
-          <div><button type="submit" class="btn btn-sm btn-warning" onClick={()=>this.runExample()}>BID</button></div>
+          <div>
+          <button type="submit" class="btn btn-sm btn-warning" onClick={()=>this.runExample()}>BID</button>
+           
+          <button type="submit" class="btn btn-sm-2 btn-warning" onClick={()=>this.runComplete()}>FINISH</button>
+          </div>
 
         </div>
       </div>
