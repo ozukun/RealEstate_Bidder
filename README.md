@@ -1,3 +1,7 @@
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9xlK7sWdCSc/0.jpg)](https://www.youtube.com/watch?v=9xlK7sWdCSc)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

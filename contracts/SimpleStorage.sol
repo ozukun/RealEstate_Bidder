@@ -13,7 +13,15 @@ contract SimpleStorage  {
   uint256 public contract_amount ;
   uint256 public dummy =44;
 
+  struct Bid_List 
+  {
+     address sender_v;
+     address reciever_v;
+     uint256 amount_v;
+     uint Bid_time;
+  }
 
+  Bid_List[]  private Bids;  
 
   function placeBid(address seller,uint256 bid) public
   {     
@@ -22,7 +30,12 @@ contract SimpleStorage  {
         //require(bid>bid_Transaction[seller],"Bid should be higher than current one");
         bid_Transaction[seller]=bid;
         highest_Bidder[seller]=bidder;
-        dummy=333;
+        Bid_List memory t1;
+        t1.sender_v=seller;
+        t1.reciever_v=msg.sender;
+        t1.amount_v=bid;
+        t1.Bid_time=block.timestamp;
+        Bids.push(t1); 
         
   } 
   function setdummy() public view returns(uint256)
