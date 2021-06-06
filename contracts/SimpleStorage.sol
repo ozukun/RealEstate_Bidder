@@ -63,7 +63,9 @@ contract SimpleStorage  {
       /*contract_amount=contract_amount-bid_Transaction[seller];*/
   }
 
-
+  function returnLog() public view returns (Bid_List[] memory) {
+        return Bids;
+  }
 
 
 }
