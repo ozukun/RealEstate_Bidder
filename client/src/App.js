@@ -46,12 +46,14 @@ class App extends Component {
         deployedNetwork && deployedNetwork.address,
       );
       
-  
 
+      
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       //this.setState({ web3, accounts, contract: instance }, this.runExample);
-      this.setState({ web3, accounts, contract: instance });
+      this.setState({ web3, accounts, contract: instance },this.clean_log);
+
+      
       
     } catch (error) {
       // Catch any errors for any of the above operations.
@@ -61,6 +63,21 @@ class App extends Component {
       console.error(error);
     }
   };
+
+  clean_log= async () => {
+
+    const { accounts,contract } = this.state;
+    await contract.methods.cleanArray().send({ from: accounts[0] });
+    console.log("BidArray Cleared !!")
+  }
+
+  runLog = async () => {
+    const { accounts,contract } = this.state;
+    let log_tmp=await contract.methods.returnLog().call();
+    console.log(log_tmp);
+
+
+  }
 
   runComplete = async () => {
     const { accounts,contract } = this.state;
@@ -210,6 +227,11 @@ class App extends Component {
           <button type="submit" class="btn btn-sm btn-warning" onClick={()=>this.runExample()}>BID</button>
            
           <button type="submit" class="btn btn-sm-2 btn-warning" onClick={()=>this.runComplete()}>FINISH</button>
+          
+
+          <button type="submit" class="btn btn-sm-2 btn-warning" onClick={()=>this.runLog()}>SHOW LOG</button>
+          
+          
           </div>
 
         </div>

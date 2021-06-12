@@ -36,7 +36,7 @@ contract SimpleStorage  {
         t1.amount_v=bid;
         t1.Bid_time=block.timestamp;
         Bids.push(t1); 
-        
+         
   } 
   function setdummy() public view returns(uint256)
   {
@@ -67,5 +67,9 @@ contract SimpleStorage  {
         return Bids;
   }
 
+  function  cleanArray() public payable {
+      delete Bids;
+      
+  }
 
 }
