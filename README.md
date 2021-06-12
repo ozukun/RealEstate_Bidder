@@ -3,6 +3,7 @@ Real Estate Bidding ( Truffle + Ganache +Solidity )
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9xlK7sWdCSc/0.jpg)](https://www.youtube.com/watch?v=9xlK7sWdCSc)
 
 Real Estate Bidding - Add Transaction Log
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/m4skC-YEClk/0.jpg)](https://www.youtube.com/watch?v=m4skC-YEClk)
 
 
